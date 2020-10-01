@@ -21,6 +21,10 @@ public class HotelInMemoryService implements HotelService {
     public void addHotel(HotelModel hotel){
         listHotel.add(hotel);
     }
+    @Override
+    public void deleteHotel(HotelModel hotel){
+        listHotel.remove(hotel);
+    }
 
     @Override
     public List<HotelModel> getHotelList(){
@@ -31,7 +35,7 @@ public class HotelInMemoryService implements HotelService {
     public HotelModel getHotelByIdHotel(String idHotel) {
         for (int i = 0;i<listHotel.size();i++) {
             String test = listHotel.get(i).getIdHotel();
-            if (test == idHotel) {
+            if (test.equals(idHotel)) {
                 return listHotel.get(i);
             }
         }
