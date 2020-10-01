@@ -15,7 +15,7 @@ public class HotelController {
     @Autowired
     private HotelService hotelService;
 
-    @RequestMapping("/Hotel/add")
+    @RequestMapping("/hotel/add")
     public String addHotel(
             @RequestParam(value="idHotel", required = true) String idHotel,
             @RequestParam(value="namaHotel", required = true) String namaHotel,
