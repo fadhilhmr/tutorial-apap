@@ -1,7 +1,23 @@
 # Tutorial APAP
 ## Authors
 * **FADHIL ILHAM RAHMADI** - *1806191194* - *A*
-### What I have learned today
+### What I have learned today TUTORIAL 2
+### Personal Note
+1. *Pertanyaan 1*
+Karena belum disediakan html file/template untuk ditampilkan ke pengguna di website.
+2. *Pertanyyaan 2*
+Menurut saya, Autowired bertugas untuk secarar otomatis membuat semua class/fungsinya mengimplement suatu package/class tertentu, sehingga ada gungsi atau class yang dibuat dapat diberikan depedensinya.
+
+3. *Pertanyaan 3*
+Hal ini karena inisiasi dari hoteModel yang sudah dibuat mengharuskan  adanya input nomor telepon yang bersifat sebagai string. Ketidakadaan data membuat null dan raise error untuk pembuatan data tersebut. Harus dibuat handler untuk kases itu.
+4. *Pertanyaan 4*
+untuk mencari sesuai nama, maka dibutuhkan handler baru yang dapt menginterasi ke isi list hotel dan mencocokkan string nama input dengan nama hotel yang sudah ada.
+5. *Pertanyaan 5*
+link ini akan menampilkan seluruh data hotel yang sudah dibuat. screenshot berada di link ini
+https://docs.google.com/document/d/1uWwF0eOFpuvFy5MT5_DZJENgk9PAIR8QgpaXR_uLcVs/edit?usp=sharing
+
+
+### What I have learned today TUTORIAL 1
 ### Personal Note
 ### Github
 1. *Apa itu Issue Tracker? Apa saja masalah yang dapat diselesaikan dengan Issue Tracker?*
@@ -20,9 +36,10 @@ pengembangan suatu sistem informasi, mobile app
 7. *Apa perbedaan dari @RequestParam dan @PathVariable? Kapan sebaiknya menggunakan @RequestParam atau @PathVariable?*
 @RequestParam mendapatkan value dari query ayng ada di app tersebut, sedangkan @PathVaariable mendapatkan nilai dari URI-nya. Kegunaan requestparam lebih ke web sederhana/trqadisional, sedangkkan pathvariable untuk web yang kompleks.
 ### What I did not understand
-- [ ] apa saja command line penting ketika menggunakan command prompt
+- [x] apa saja command line penting ketika menggunakan command prompt
 - [x] cara mengerjakan tutorial 1
 - [ ] aplikasi Spring dan pengunaannya yang benar
 - [x] Adaptasi menggunakan Intelij
+- [ ] Konsep abstract dan interface di java harus dikaji ulang
  
 
