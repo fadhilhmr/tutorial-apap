@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Controller
 public class HotelController {
@@ -41,6 +42,8 @@ public class HotelController {
         return "add-hotel";
     }
 
+
+
     @GetMapping("/hotel/change/{idHotel}")
     public String changeHotelFormPage(
             @PathVariable Long idHotel,
@@ -68,18 +71,50 @@ public class HotelController {
             @RequestParam(value= "idHotel") Long idHotel,
             Model model
     ){
+        try{
+            if (idHotel == null) {
+                return "error-input";
+            }
+            HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
+            List<KamarModel> listKamar = kamarService.findAllKamarByIdHotel(idHotel);
+            model.addAttribute("hotel",hotel);
+            model.addAttribute("listKamar", listKamar);
+            if(listKamar.size()== 0){
+                model.addAttribute("status", "tidak ada kamar");
+            }else {
+                model.addAttribute("status", "kamar tersedia");
+            }
+            return "view-hotel";
+        }
+        catch (NumberFormatException e){
+            return "error-input";
+        }
+        catch (NoSuchElementException e){
+            return "error-input";
+        }
+    }
+
+    @GetMapping("/hotel/view/delete/{idHotel}")
+    public String deleteHotel(
+            @PathVariable(value= "idHotel") Long idHotel,
+            Model model
+    ){
         HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
         List<KamarModel> listKamar = kamarService.findAllKamarByIdHotel(idHotel);
-        model.addAttribute("hotel",hotel);
-        model.addAttribute("listKamar", listKamar);
-        return "view-hotel";
+        if(listKamar.size() == 0){
+            hotelService.deleteHotel(hotel);
+            return "home";
+        }
+        return "error-delete";
     }
+
 
     @GetMapping("/hotel/view-all")
     public String viewAll(Model model ){
         List<HotelModel> listSemuaHotel = hotelService.getHotelList();
-        model.addAttribute("listHotel", listHotel);
+        model.addAttribute("listSemuaHotel", listSemuaHotel);
         return "viewall-hotel";
     }
+
 
 }

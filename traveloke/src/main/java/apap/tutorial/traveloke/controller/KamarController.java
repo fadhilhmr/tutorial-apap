@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class KamarController {
     @Qualifier("hotelServiceImpl")
@@ -43,4 +45,39 @@ public class KamarController {
         model.addAttribute("kamar", kamar);
         return "add-kamar";
     }
+
+    @GetMapping("/kamar/change/{noKamar}")
+    public String changeKamarFormPage(
+            @PathVariable Long noKamar,
+            Model model
+    ){
+        model.addAttribute("kamar", kamarService.getKamarByNoKamar(noKamar));
+        return "form-update-kamar";
+    }
+
+    @PostMapping("/kamar/change")
+    public String changeKamarFormSubmit(
+            @ModelAttribute KamarModel kamar,
+            Model model
+    ){
+        KamarModel kamarUpdated = kamarService.updateKamar(kamar);
+        model.addAttribute("kamar",kamar);
+        return "update-kamar";
+    }
+
+    @GetMapping("/kamar/delete/{noKamar}/{idHotel}")
+    public String deleteKamar(
+            @PathVariable(value = "noKamar") Long noKamar,
+            @PathVariable(value = "idHotel") Long idHotel,
+            Model model
+    ){
+        KamarModel delKamar = kamarService.getKamarByNoKamar(noKamar);
+        kamarService.deleteKamar(delKamar);
+        HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
+        List<KamarModel> listKamar = kamarService.findAllKamarByIdHotel(idHotel);
+        model.addAttribute("hotel",hotel);
+        model.addAttribute("listKamar", listKamar);
+        return "view-hotel";
+    }
+
 }

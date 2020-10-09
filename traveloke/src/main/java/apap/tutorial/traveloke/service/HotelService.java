@@ -14,5 +14,7 @@ public interface HotelService {
 
     HotelModel updateHotel(HotelModel hotel);
 
+    void deleteHotel(HotelModel hotel);
+
 
 }

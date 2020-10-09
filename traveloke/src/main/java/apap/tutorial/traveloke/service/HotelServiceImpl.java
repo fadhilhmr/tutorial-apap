@@ -40,4 +40,9 @@ public class HotelServiceImpl implements HotelService {
             return null;
         }
     }
+
+    @Override
+    public void deleteHotel(HotelModel hotel){
+        hotelDb.delete(hotel);
+    }
 }
