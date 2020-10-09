@@ -49,9 +49,20 @@ public class HotelController {
             @PathVariable Long idHotel,
             Model model
     ){
-        HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
-        model.addAttribute("hotel", hotel);
-        return "form-update-hotel";
+        try {
+            if (idHotel == null) {
+                return "error-input";
+            }
+            HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
+            model.addAttribute("hotel", hotel);
+            return "form-update-hotel";
+        }
+        catch (NumberFormatException e){
+            return "error-input";
+        }
+        catch (NoSuchElementException e){
+            return "error-input";
+        }
     }
 
     @PostMapping("/hotel/change")
@@ -80,7 +91,7 @@ public class HotelController {
             model.addAttribute("hotel",hotel);
             model.addAttribute("listKamar", listKamar);
             if(listKamar.size()== 0){
-                model.addAttribute("status", "tidak ada kamar");
+                model.addAttribute("status", "hotel belum memiliki daftar kamar");
             }else {
                 model.addAttribute("status", "kamar tersedia");
             }
@@ -99,13 +110,23 @@ public class HotelController {
             @PathVariable(value= "idHotel") Long idHotel,
             Model model
     ){
-        HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
-        List<KamarModel> listKamar = kamarService.findAllKamarByIdHotel(idHotel);
-        if(listKamar.size() == 0){
-            hotelService.deleteHotel(hotel);
-            return "home";
+        try {
+            if (idHotel == null) {
+                return "error-input";
+            }
+            HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
+            List<KamarModel> listKamar = kamarService.findAllKamarByIdHotel(idHotel);
+            if (listKamar.size() == 0) {
+                hotelService.deleteHotel(hotel);
+                return "home";
+            }
+            return "error-delete";
+        }catch (NumberFormatException e){
+            return "error-input";
         }
-        return "error-delete";
+        catch (NoSuchElementException e){
+            return "error-input";
+        }
     }
 
 
