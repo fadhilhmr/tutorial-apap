@@ -1,6 +1,22 @@
 # Tutorial APAP
 ## Authors
 * **FADHIL ILHAM RAHMADI** - *1806191194* - *A*
+
+### What I have learned today TUTORIAL 3
+### Personal Note
+1. *Pada class KamarDb, terdapat method findAllByHotelId, apakah kegunaan dari method tersebut?*
+Method tersebut berguna untuk mengakses database dan mereturn semua isi database dengan hotel ID yang ditaruh di argumen.
+2. *Pada class HotelController, jelaskan perbedaan method addHotelFormPage dan addHotelSubmit?*
+perbedannya adalah bahwa addhotelformpage mengambil data yang sudah ada dan dimasukkan ke model untuk direturn ke file html, sedangkan addhotelsubmit aka mengembalikan updated model yang berisid ari input user ke html yang sama.
+3. *Jelaskan kegunaan dari JPA Repository!*
+JPA repository merupakan database yang memerakan java class kita ke relational table. JPA repository membuat convert dari jaca ke database menjadi lebih mudah
+4. *Sebutkan dan jelaskan di bagian kode mana sebuah relasi antara HotelModel dan KamarModel dibuat?*
+ketika ada tambahan anotasi dimasing masing Model yaitu onetomany/manytoone, dimana membuat kedua database saling mereferensikan satu sama lain
+5. *Jelaskan kegunaan FetchType.LAZY, CascadeType.ALL, dan FetchType.EAGER*
+fetchtype.lazy =  untuk membuat seluruh object , KETIKA dipanggil  
+cascadetype.all = untuk mendukung perubahasn CRUD database
+fetchtype.eager = dibuat untuk relasi one to one dan many to one lalu bisa digunakan langsung untuk memanggil object
+
 ### What I have learned today TUTORIAL 2
 ### Personal Note
 1. *Pertanyaan 1*
@@ -41,5 +57,5 @@ pengembangan suatu sistem informasi, mobile app
 - [ ] aplikasi Spring dan pengunaannya yang benar
 - [x] Adaptasi menggunakan Intelij
 - [ ] Konsep abstract dan interface di java harus dikaji ulang
- 
+ - [ ] method dan object di JPA dan perdatabasean java
 
