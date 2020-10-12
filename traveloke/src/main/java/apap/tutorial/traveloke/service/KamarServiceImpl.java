@@ -49,4 +49,24 @@ public class KamarServiceImpl implements KamarService{
     public void deleteKamar(KamarModel kamar){
         kamarDb.delete(kamar);
     }
+
+    @Override
+    public List<KamarModel> getKamarByNamaKamarDanKapasitas1(String namaKamar, Integer kapasitas){
+        return kamarDb.findByNamaKamarAndKapasitasKamar(namaKamar,kapasitas);
+    }
+
+    @Override
+    public List<KamarModel> getKamarByNamaKamarDanKapasitas2(String namaKamar, Integer kapasitas, Long idHotel ){
+        List<KamarModel> listKamar1=null;
+        List<KamarModel> tempDaftar = kamarDb.findByHotelId(idHotel);
+        for (int i = 0;i< tempDaftar.size();i++){
+            KamarModel temp=tempDaftar.get(i);
+            if ( temp.getNamaKamar().equals(namaKamar)){
+                if(temp.getKapasitasKamar()==kapasitas){
+                    listKamar1.add(temp);
+                }
+            }
+        }
+        return listKamar1;
+    }
 }
