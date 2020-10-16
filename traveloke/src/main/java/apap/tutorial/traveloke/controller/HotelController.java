@@ -90,10 +90,12 @@ public class HotelController {
             List<KamarModel> listKamar = kamarService.findAllKamarByIdHotel(idHotel);
             model.addAttribute("hotel",hotel);
             model.addAttribute("listKamar", listKamar);
+            model.addAttribute("hasKamar", !listKamar.isEmpty());
             if(listKamar.size()== 0){
                 model.addAttribute("status", "hotel belum memiliki daftar kamar");
             }else {
                 model.addAttribute("status", "kamar tersedia");
+
             }
             return "view-hotel";
         }

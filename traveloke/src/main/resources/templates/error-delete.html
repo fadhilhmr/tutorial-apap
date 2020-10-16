@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>warning!</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
 </head>
+
 <body>
-<h2 th:text="'hotel tidak bisa dihapus karena masih ada kamar'"></h2>
+<nav th:replace="fragments/fragment :: navbar('gagal hapus')"></nav>
+    <h2 th:text="'hotel tidak bisa dihapus karena masih ada kamar'"></h2>
 <a href="/">Kembali</a>
 </body>
 </html>

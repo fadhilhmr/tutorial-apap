@@ -8,8 +8,8 @@
 </head>
 
 <body>
-<nav th:replace="fragments/fragment :: navbar('Ubah Kamar')"></nav>
-<h2 th:text="'kamar berhasil diubah.'"></h2>
+<nav th:replace="fragments/fragment :: navbar('Hapus Kamar')"></nav>
+<h2 th:text="${kamarCount}+' kamar telah dihapus'"></h2>
 <a href="/">Kembali</a>
 </body>
 </html>

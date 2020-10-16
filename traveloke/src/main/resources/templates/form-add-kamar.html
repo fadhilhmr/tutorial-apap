@@ -3,25 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>Form Add kamar</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
 </head>
+
 <body>
+<nav th:replace="fragments/fragment :: navbar('tambah kamar')"></nav>
 <h3>Tambah kamar</h3>
 <form th:action="@{/kamar/add}" th:object="${kamar}" method="post">
-    <input type="hidden" th:field="*{hotel}"/>
-    Nama Kamar : <br>
-    <input type="text" name="namaKamar"/>
-    <br>
-    Tipe Kamar : <br>
-    <select name="tipe">
-        <option value="0">Deluxe</option>
-        <option value="1">Executive</option>
-        <option value="2">President suite</option>
-    </select>
-    <br>
-    Kapasitas kamar : <br>
-    <input type="number" name="kapasitasKamar"/>
-    <br>
-    <button type = "submit">Submit</button>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nama Kamar</th>
+            <th>Tipe Kamar</th>
+            <th>Kapasitas Kamar</th>
+            <th><a th:href="@{/kamar/add/}+${kamar.noKamar}">tambah</a> </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <form>
+                    <input type="text" name="namaKamar">
+                </form>
+            </td>
+            <td>
+                <select name="tipe">
+                    <option value="0">Deluxe</option>
+                    <option value="1">Executive</option>
+                    <option value="2">President suite</option>
+                </select>
+            </td>
+
+            <td>
+                <form>
+                    <input type="number" name="kapasitasKamar">
+                </form>
+            </td>
+            <td><a th:href="@{/kamar/change/}+${kamar.noKamar}">hapus</a> </td>
+
+            <!--                    <td><a th:href="@{/kamar/delete/}+${kamar.noKamar}">Delete Kamar</a> </td>-->
+        </tr>
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-sm btn-danger">Simpan</button>
+<!--    <input type="hidden" th:field="*{hotel}"/>-->
+<!--    Nama Kamar : <br>-->
+<!--    <input type="text" name="namaKamar"/>-->
+<!--    <br>-->
+<!--    Tipe Kamar : <br>-->
+<!--    <select name="tipe">-->
+<!--        <option value="0">Deluxe</option>-->
+<!--        <option value="1">Executive</option>-->
+<!--        <option value="2">President suite</option>-->
+<!--    </select>-->
+<!--    <br>-->
+<!--    Kapasitas kamar : <br>-->
+<!--    <input type="number" name="kapasitasKamar"/>-->
+<!--    <br>-->
+<!--    <button type = "submit">Submit</button>-->
 </form>
 </body>
 </html>
