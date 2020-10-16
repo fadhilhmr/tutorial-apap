@@ -19,19 +19,55 @@
 </section>
 <section>
     <h2>Daftar Kamar</h2>
-    <div th:each="kamar : ${listKamar}">
-        <h3 th:text="'no Kamar: '+ ${kamar.noKamar}"></h3>
-        <h3 th:text="'nama Kamar: '+ ${kamar.namaKamar}"></h3>
+    <div th:if="${hasKamar}">
+        <form th:action="@{/kamar/delete}" th:object="${hotel}" method="POST">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>No</th>
+                    <th>No Kamar</th>
+                    <th>Nama Kamar</th>
+                    <th>Tipe Kamar</th>
+                    <th>Kapasitas Kamar</th>
+                    <th>Aksi</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="kamar, iterationStatus : ${listKamat}">
+                    <td th:text="${iterationStatus.count}"></td>
+                    <td th:text="${kamar.noKamar}"></td>
+                    <td th:text="${kamar.namaKamar}"></td>
 
-        <h3 th:if="${kamar.tipe == 0}">Tipe : Deluxe</h3>
-        <h3 th:if="${kamar.tipe == 1}">Tipe : executive</h3>
-        <h3 th:if="${kamar.tipe == 2}">Tipe : President suite</h3>
+                    <td>
+                        <div th:if="${kamar.tipe == 0}">Deluxe</div>
+                        <div th:if="${kamar.tipe == 1}">Executive</div>
+                        <div th:if="${kamar.tipe == 2}">President Suite</div>
+                    </td>
 
-        <h3 th:text="'kapasitas Kamar: '+ ${kamar.kapasitasKamar}"></h3>
-        <td><a th:href="@{/kamar/change/}+${kamar.noKamar}">Change data kamar</a></td>
-        <td><a th:href="@{/kamar/delete/}+${kamar.noKamar}+@{/}+${hotel.id}">Delete kamar</a></td>
-    </div><br><br>
-    <td><a th:href="@{/kamar/add/}+${hotel.id}">add kamar</a></td>
+                    <td th:text="${kamar.kapasitasKamar}"></td>
+                    <td><a th:href="@{/kamar/change/}+${kamar.noKamar}">Change Data Kamar</a> </td>
+                    <td><a th:href="@{/kamar/delete/}+${kamar.noKamar}">Delete Kamar</a> </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div th:unless="${hasKamar}">
+        <h2 th:text="'hotel belum memiliki daftar kamar'"></h2>
+    </div>
+<!--    <div th:each="kamar : ${listKamar}">-->
+<!--        <h3 th:text="'no Kamar: '+ ${kamar.noKamar}"></h3>-->
+<!--        <h3 th:text="'nama Kamar: '+ ${kamar.namaKamar}"></h3>-->
+
+<!--        <h3 th:if="${kamar.tipe == 0}">Tipe : Deluxe</h3>-->
+<!--        <h3 th:if="${kamar.tipe == 1}">Tipe : executive</h3>-->
+<!--        <h3 th:if="${kamar.tipe == 2}">Tipe : President suite</h3>-->
+
+<!--        <h3 th:text="'kapasitas Kamar: '+ ${kamar.kapasitasKamar}"></h3>-->
+<!--        <td><a th:href="@{/kamar/change/}+${kamar.noKamar}">Change data kamar</a></td>-->
+<!--        <td><a th:href="@{/kamar/delete/}+${kamar.noKamar}+@{/}+${hotel.id}">Delete kamar</a></td>-->
+<!--    </div><br><br>-->
+    <td><a th:href="@{/kamar/add/}+${hotel.id}">Add Kamar</a></td>
 </section>
 </body>
 </html>
