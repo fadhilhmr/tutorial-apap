@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<nav th:replace="fragments/fragment :: navbar"></nav>
+<nav th:replace="fragments/fragment :: navbar('Ubah Hotel')"></nav>
 <h2 th:text="'Hotel dengan id hotel ' + ${idHotel} + ' berhasil diubah.'"></h2>
 <a href="/">Kembali</a>
 </body>

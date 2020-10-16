@@ -14,20 +14,27 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/esm/popper.min.js"></script>
         <script th:src="@{/js/bootstrap.min.js}"></script>
     </head>
+
+<!--    <head th:fragment="common_header(h2)">-->
+<!--        <h2 th:replace="${h2}">The awesome application</h2>-->
+<!--    </head>-->
 </head>
 
 <body>
-    <nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav th:fragment="navbar(title)" class="navbar navbar-expand-lg navbar-light bg-light">
         <a th:text="traveloke" class="navbar-brand font-weight-bold text-primary" href="#"></a>
         <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarNavAltMarkup"
                  aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" th:href="@{/}">Home <span class="sr-only"> (current)</span> </a>
             </div>
         </div>
+        <a th:text="${title}" class="nav-item nav-link active text-secondary" th:href="@{/}">
+
     </nav>
 
 </body>
