@@ -37,7 +37,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="kamar, iterationStatus : ${listKamat}">
+                <tr th:each="kamar, iterationStatus : ${listKamar}">
                     <td th:text="${iterationStatus.count}"></td>
                     <td th:text="${kamar.noKamar}"></td>
                     <td th:text="${kamar.namaKamar}"></td>
@@ -50,10 +50,15 @@
 
                     <td th:text="${kamar.kapasitasKamar}"></td>
                     <td><a th:href="@{/kamar/change/}+${kamar.noKamar}">Change Data Kamar</a> </td>
-                    <td><a th:href="@{/kamar/delete/}+${kamar.noKamar}">Delete Kamar</a> </td>
+                    <td>
+                        <input type="checkbox" th:field="*{listKamar}" th:value="${kamar.noKamar}"/>
+                        <label th:for="${#ids.prev('listKamar')}">Hapus</label>
+                    </td>
+<!--                    <td><a th:href="@{/kamar/delete/}+${kamar.noKamar}">Delete Kamar</a> </td>-->
                 </tr>
                 </tbody>
             </table>
+            <button type="submit" class="btn btn-sm btn-danger">Hapus yang dipilih</button>
         </form>
     </div>
     <div th:unless="${hasKamar}">
