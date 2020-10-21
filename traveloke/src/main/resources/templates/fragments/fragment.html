@@ -33,9 +33,14 @@
                 <a class="nav-item nav-link active" th:href="@{/}">Home <span class="sr-only"> (current)</span> </a>
             </div>
         </div>
-        <a th:text="${title}" class="nav-item nav-link active text-secondary" th:href="@{/}">
+        <a th:text="${title}" class="nav-item nav-link active text-secondary" th:href="@{/}"></a>
 
     </nav>
 
 </body>
+
+<footer th:fragment="kaki">
+    <h3>Made By Fadhil</h3>
+    <td th:text="${#dates.format(new java.util.Date(transaction.documentDate), 'dd-MMM-yy')}"></td>
+</footer>
 </html>

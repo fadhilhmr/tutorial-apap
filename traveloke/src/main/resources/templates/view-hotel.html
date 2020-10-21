@@ -76,7 +76,8 @@
 <!--        <td><a th:href="@{/kamar/change/}+${kamar.noKamar}">Change data kamar</a></td>-->
 <!--        <td><a th:href="@{/kamar/delete/}+${kamar.noKamar}+@{/}+${hotel.id}">Delete kamar</a></td>-->
 <!--    </div><br><br>-->
-    <td><a th:href="@{/kamar/add/}+${hotel.id}">Add Kamar</a></td>
+    <td><a th:href="@{/kamar/add/multiple/}+${hotel.id}">Add Kamar</a></td>
 </section>
 </body>
+<footer th:include="fragments/fragment :: kaki" th:remove="tag"></footer>
 </html>

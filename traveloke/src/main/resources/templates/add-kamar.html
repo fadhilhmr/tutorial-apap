@@ -9,7 +9,7 @@
 
 <body>
 <nav th:replace="fragments/fragment :: navbar('Tambah Kamar')"></nav>
-<h2 th:text="'Kamar berhasil ditambahkan'"></h2>
+<h2 th:text="${jumlahKamar} +' Kamar berhasil ditambahkan'"></h2>
 <a href="/">Kembali</a>
 </body>
 </html>

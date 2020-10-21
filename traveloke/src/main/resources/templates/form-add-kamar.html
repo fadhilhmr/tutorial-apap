@@ -10,43 +10,41 @@
 <body>
 <nav th:replace="fragments/fragment :: navbar('tambah kamar')"></nav>
 <h3>Tambah kamar</h3>
-<form th:action="@{/kamar/add}" th:object="${kamar}" method="post">
+<form th:action="@{/kamar/add/multiple}" th:object="${hotelTemp}" method="POST">
+    <input type="hidden" th:field="*{id}"/>
     <table class="table">
         <thead>
         <tr>
             <th>Nama Kamar</th>
             <th>Tipe Kamar</th>
             <th>Kapasitas Kamar</th>
-            <th><a th:href="@{/kamar/add/}+${kamar.noKamar}">tambah</a> </th>
+            <th><button type="submit" value="submit">tambah</button> </th>
         </tr>
         </thead>
         <tbody>
-        <tr>
+        <tr th:each="kamar, iterationStatus : ${hotelTemp.listKamar}">
             <td>
-                <form>
-                    <input type="text" name="namaKamar">
-                </form>
+                <input class="form-control" type="text" th:field="*{listKamar[__${iterationStatus.index}__].namaKamar}">
             </td>
             <td>
-                <select name="tipe">
+                <select class="form-control" th:field="*{listKamar[__${iterationStatus.index}__].tipe}">
                     <option value="0">Deluxe</option>
                     <option value="1">Executive</option>
                     <option value="2">President suite</option>
                 </select>
             </td>
-
             <td>
-                <form>
-                    <input type="number" name="kapasitasKamar">
-                </form>
+                <input class="form-control" type="number" th:field="*{listKamar[__${iterationStatus.index}__].kapasitasKamar}">
             </td>
-            <td><a th:href="@{/kamar/change/}+${kamar.noKamar}">hapus</a> </td>
-
-            <!--                    <td><a th:href="@{/kamar/delete/}+${kamar.noKamar}">Delete Kamar</a> </td>-->
+<!--            <td><a th:href="@{/kamar/add/multiple}">hapus</a> </td>-->
+            <td>
+                <button th:value="${iterationStatus.index}" name="hapus" class="btn-danger" value="submit">Hapus</button>
+<!--                <h2 type="hidden" name="idx" th:value="${iterationStatus.index}"></h2>-->
+            </td>
         </tr>
         </tbody>
     </table>
-    <button type="submit" class="btn btn-sm btn-danger">Simpan</button>
+    <button type="submit" name="simpan" class="btn btn-sm btn-success">Simpan</button>
 <!--    <input type="hidden" th:field="*{hotel}"/>-->
 <!--    Nama Kamar : <br>-->
 <!--    <input type="text" name="namaKamar"/>-->
