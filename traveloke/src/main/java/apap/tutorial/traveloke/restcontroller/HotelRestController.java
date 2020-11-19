@@ -77,6 +77,14 @@ public class HotelRestController {
         return hotelRestService.retrieveListHotel();
     }
 
+
+    @GetMapping(value = "/hotel/find")
+    private Mono<String> findHotelByKota(
+            @RequestParam(value = "cityName") String namaKota
+    ){
+        return hotelRestService.findHotelByKota(namaKota);
+    }
+
     @GetMapping(value= "/hotel/{idHotel}/status")
     private Mono<String> getStatus(
             @PathVariable Long idHotel
