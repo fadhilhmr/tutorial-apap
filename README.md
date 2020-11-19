@@ -2,6 +2,18 @@
 ## Authors
 * **FADHIL ILHAM RAHMADI** - *1806191194* - *A*
 
+### What I have learned today TUTORIAL 4
+### Personal Note
+1. *Jelaskan perbedaan th:include dan th:replace!*
+Perbedaannya adalah include akan menambahkan fragment ke div yang ditentukan, sedangkan replace akan mengganti tag div terpilih dengan isi fragment.
+2. *Jelaskan apa fungsi dari th:object!*
+fungsi th:object adalah untuk mengikat tag html dengan objek yang tersedia, sehingga di dalam tag tersebut bisa memanggil attributnya secara lansgung dengan asterisk "*{attr}" , dimana tanpa th:object bantuknya akan seperti ini = "${object.attr}"
+3. *Jelaskan perbedaan dari * dan $ pada saat penggunaan th:object! Kapan harus dipakai?*
+ sebenarnya kegunaan dari * dan $ di th:object, sama sama untuk mngakses object. perbadaanya adalah $ digunakan ketika object belum diinisiasi sebelumnya katika diakses, sedangkan * menambahkan attribut dari object yang sudah diinisiasi oleh tag tertentu seperti th:object
+4. *Bagaimana kamu menyelesaikan latihan nomor 3?*
+Untuk latihan tiga, saya memanfaatkan fragment yang sudah ada dengan menambahkan argumen dengan input string, sehingga setiap dimasukkan string di argumen fragment tersebut, maka fragment akan mengupdate isi navbarnya dengan string yang didapatkan dari masing masing html.
+
+
 ### What I have learned today TUTORIAL 3
 ### Personal Note
 1. *Pada class KamarDb, terdapat method findAllByHotelId, apakah kegunaan dari method tersebut?*
@@ -54,7 +66,7 @@ pengembangan suatu sistem informasi, mobile app
 ### What I did not understand
 - [x] apa saja command line penting ketika menggunakan command prompt
 - [x] cara mengerjakan tutorial 1
-- [ ] aplikasi Spring dan pengunaannya yang benar
+- [ ] LATIHAN 4 TUTORIAL 4
 - [x] Adaptasi menggunakan Intelij
 - [ ] Konsep abstract dan interface di java harus dikaji ulang
  - [ ] method dan object di JPA dan perdatabasean java
