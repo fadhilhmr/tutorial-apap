@@ -2,6 +2,7 @@ package apap.tutorial.traveloke.security;
 
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -23,6 +24,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/css/**").permitAll()
                 .antMatchers("/js/**").permitAll()
                 .antMatchers("/hotel/**").hasAuthority("RECEPTIONIST")
+                .antMatchers("/kamar/add/multiple/").hasAuthority("RECEPTIONIST")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -43,6 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .roles("USER");
 //    }
 
+    @Qualifier("userDetailsServiceImpl")
     @Autowired
     private UserDetailsService userDetailsService;
 
