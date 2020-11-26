@@ -2,6 +2,19 @@
 ## Authors
 * **FADHIL ILHAM RAHMADI** - *1806191194* - *A*
 
+### What I have learned today TUTORIAL 5
+### Pertanyaan
+1. *Apa itu Postman? Apa kegunaannya?*
+Postman merupakan client API yang berguna untuk membantu dalam membuat dan menguji API yang digunakan. Postman berjalan dengan mendokumentasikan request yang diberikan dan mengujinya dengan response dari sistem yang sudah diimplementasi REST juga
+2. *Jelaskan fungsi dari anotasi @JsonIgnoreProperties dan @JsonProperty*
+JsonIgnoreProperties adalah property suatu class untuk menujukkan Properties yang tidak akan dimasukkan dalam pemetaan data yang diolah, sepertinpada soal ini dimana Hotel di ignore dalam proses crud kamar dinturorial ini
+JsonProperty berguna untuk menandakan sesuatu attribut/field di java sebagai Json Propert yang dapat digunakan data mapper milik Json
+3. *Apa kegunaan atribut WebClient?*
+WebClient adalah modul dari Spring dalam mengolah suatu HTTP reauests. Webclient dapat mengolah dan mengambil request dan juga response dari suatu URL yang dituju untuk mengakses value value tertentu
+4. *Apa itu ResponseEntity dan BindingResult? Apa kegunaannya?*
+responseEntity meruapkan suatu respon HTTP terhadap suatu request yang berisi status, header dan juga isi. ResponseEntity dapat menngirim respon pesan atas request tersebut. sedangkan Binding Result adalah objek spring yang mengambil error dan ememvalidasi suatu objek yang ingin divalidasi.
+
+
 ### What I have learned today TUTORIAL 4
 ### Personal Note
 1. *Jelaskan perbedaan th:include dan th:replace!*
@@ -65,8 +78,7 @@ pengembangan suatu sistem informasi, mobile app
 @RequestParam mendapatkan value dari query ayng ada di app tersebut, sedangkan @PathVaariable mendapatkan nilai dari URI-nya. Kegunaan requestparam lebih ke web sederhana/trqadisional, sedangkkan pathvariable untuk web yang kompleks.
 ### What I did not understand
 - [x] apa saja command line penting ketika menggunakan command prompt
-- [x] cara mengerjakan tutorial 1
-- [ ] LATIHAN 4 TUTORIAL 4
+- [ ] memperdalam REST dan penggunaan API
 - [x] Adaptasi menggunakan Intelij
 - [ ] Konsep abstract dan interface di java harus dikaji ulang
  - [ ] method dan object di JPA dan perdatabasean java
