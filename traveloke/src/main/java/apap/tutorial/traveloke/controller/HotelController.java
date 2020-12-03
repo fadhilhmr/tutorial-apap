@@ -22,7 +22,7 @@ public class HotelController {
     @Autowired
     private KamarService kamarService;
 
-    @GetMapping("/")
+    @GetMapping("/hotel")
     private String home(){
         return "home";
     }

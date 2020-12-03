@@ -32,6 +32,12 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" th:href="@{/}">Home <span class="sr-only"> (current)</span> </a>
             </div>
+            <div class="navbar-nav pull-right">
+                <a class="nav-item nav-link active" th:href="@{/user/changepass}">Ubah Password</a>
+            </div>
+            <ul class="navbar-nav pull-right">
+                <a class="nav-item nav-link active" th:href="@{/logout}">logout</a>
+            </ul>
         </div>
         <a th:text="${title}" class="nav-item nav-link active text-secondary" th:href="@{/}"></a>
 

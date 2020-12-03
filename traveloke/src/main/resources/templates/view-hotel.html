@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>View Hotel</title>
@@ -49,8 +50,8 @@
                     </td>
 
                     <td th:text="${kamar.kapasitasKamar}"></td>
-                    <td><a th:href="@{/kamar/change/}+${kamar.noKamar}">Change Data Kamar</a> </td>
-                    <td>
+                    <td sec:authorize="hasAuthority('RECEPTIONIST')"><a th:href="@{/kamar/change/}+${kamar.noKamar}">Change Data Kamar</a> </td>
+                    <td sec:authorize="hasAuthority('RECEPTIONIST')">
                         <input type="checkbox" th:field="*{listKamar}" th:value="${kamar.noKamar}"/>
                         <label th:for="${#ids.prev('listKamar')}">Hapus</label>
                     </td>
@@ -58,7 +59,7 @@
                 </tr>
                 </tbody>
             </table>
-            <button type="submit" class="btn btn-sm btn-danger">Hapus yang dipilih</button>
+            <button sec:authorize="hasAuthority('RECEPTIONIST')" type="submit" class="btn btn-sm btn-danger">Hapus yang dipilih</button>
         </form>
     </div>
     <div th:unless="${hasKamar}">
@@ -76,7 +77,11 @@
 <!--        <td><a th:href="@{/kamar/change/}+${kamar.noKamar}">Change data kamar</a></td>-->
 <!--        <td><a th:href="@{/kamar/delete/}+${kamar.noKamar}+@{/}+${hotel.id}">Delete kamar</a></td>-->
 <!--    </div><br><br>-->
-    <td><a th:href="@{/kamar/add/multiple/}+${hotel.id}">Add Kamar</a></td>
+    <div sec:authorize="hasAuthority('RECEPTIONIST')" class="row">
+        <div class="col-md-4">
+            <td><a th:href="@{/kamar/add/multiple/}+${hotel.id}">Add Kamar</a></td>
+        </div>
+    </div>
 </section>
 </body>
 <!--<footer th:include="fragments/fragment :: kaki" th:remove="tag"></footer>-->

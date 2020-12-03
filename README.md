@@ -2,6 +2,20 @@
 ## Authors
 * **FADHIL ILHAM RAHMADI** - *1806191194* - *A*
 
+### What I have learned today TUTORIAL 6
+### Pertanyaan
+1. *Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi! Di bagian mana (dalam kode yang telah anda
+buat) konsep tersebut diimplementasi?*
+Otentikasi adalah proses menverifikasi sebuah akun sekaligus memvalidasi sebuah akun. Di tutorial ini, otentikasi dilakukan saat melakukan login dengan menghubungkan ke DB. Otorisasi adalah tahapan setelahh otentikasi, dimana otorisasi adalah penentuan peran dan otoritas dari suatu peran di sistem, otorisasi dilaksanakan saat antMatchers ataupun sec:authorize yang menerukan jenis role yang bisa menggunakan app.
+2. *Apa itu BCryptPasswordEncoder? Jelaskan secara singkat cara kerja dan tujuannya.*
+BCryptPasswordEncoder merupakan suatu objek pengolah password yang mengencrypt passowrd dengan menghashnya. Cara kerjanya adalah dengan menerima string password, maka akan dihash dan juga ditambahkan random char untuk mengecohh dan meningkatkan keamanan.
+3. *Jelaskan secara singkat apa itu UUID beserta penggunaannya!*
+UUID (Universally Unique IDentifiers) adalah suatu identifier yang melabelkan suatu data agar data tersebut unik dan berbeda. UUID di database dapat berperan sebagai Key Attribute
+4. *Apa kegunaan class UserDetailsServiceImpl.java? Mengapa harus ada class tersebut padahal kita sudah
+memiliki class UserRoleServiceImpl.java?*
+UserDetailsServiceImpl merupakan implementasi dari interface UserDetailsService dengan tujuan untuk mengambil data user yang sudah di otentikasi yang disediakan dari sistemnya. Sedangkan UserServiceImpl merupakan implementasi dari interface User service yang merupakan buatan dari developer sendiri.
+
+
 ### What I have learned today TUTORIAL 5
 ### Pertanyaan
 1. *Apa itu Postman? Apa kegunaannya?*

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> Home </title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+</head>
+<body>
+<div class="container-fluid">
+    <h2>Hello!</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                   Ubas Password
+                </div>
+                <div class="card-body">
+                    <form th:action="@{/user/changepass}" method="post">
+                        <div class="row form-group">
+                            <label class="col-sm-4">Password Lama:</label>
+                            <input type="password" class="col-sm-8 form-control input-sm" name="passLama">
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-sm-4">Password Baru:</label>
+                            <input type="password" class="col-sm-8 form-control input-sm" name="passBaru">
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-sm-4">Konfirmasi Password:</label>
+                            <input type="password" class="col-sm-8 form-control input-sm" name="passKonfirmasi">
+                        </div>
+                        <div class="row form-group">
+                            <button type="submit" class="btn btn-primary">Ubah</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
