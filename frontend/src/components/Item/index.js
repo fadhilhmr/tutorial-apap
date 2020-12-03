@@ -23,6 +23,7 @@ export default function Item(props){
                             {judul} ({tahun})
                             <input
                                 className="ml-2"
+                                type={checked ? "checkbox" : "hidden"}
                                 checked={checked}
                                 onChange={handleChange}
                             />
