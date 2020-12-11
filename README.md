@@ -4,19 +4,26 @@
 
 ### What I have learned today TUTORIAL 7
 ### Pertanyaan
+
 1. *Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot sebagai ilustrasi
 dari apa yang Anda jelaskan.*
+
 - Pembuatan Component (Item dan List)
 Pertama, setelah menginisiasi react app, maka hal yang pertama dalajh membuat component. disini componenet dibagi menjadi dua, yaitu item dan list dimana kedua component ini akan digunakan di main app.js (seperti penggunaan fragment di html atau class di OOP Java).
+
 - Class-Based Implementation
 Class-Based Implementation merupakan penggunaan components di dalam app.js atau main file jsnya, dimana penggunaan yang dipakai seperti memanggil class di oop, dimana harus diinisasi dan dapat digunakan isinya di dalam function JSnya.
+
 - State
 Disini kami belajar menggunakan state, suatu variabel yang bertindak sebagai syarat kondisi dalam suatu objek yang diisi dengan kontanta lain lainnya. Hal ini dapat membantu ketika ingin menjalankan sesuatu dengan kondisi dari suatu variabel tertentu. State juga membantu untuk mengidentifikasi kondisi dari suatu variabel yang akan dijadikan parameter di fungsi tertentu.
+
 - event handler function
 Dalam main appnya, untuk menampilkan tampilan di pagenya, maka menggunakan funtion yang berisi tag html yang akan ditampilkan. Untuk beberapa kasus, ada event hadler function, yang merupakan logis dari suatu algoritma untuk menampilkan hal hal tertentu, sesuai dengan isinya dan didasar denagn event yang memicunya
 https://docs.google.com/document/d/17steajzQVcp7ISuUB1APz1QK1rQ2kszRfFqXnScXDlA/edit?usp=sharing
+
 2. *Menurut pemahaman kamu selama pengerjaan tutorial ini, apa perbedaan antara state dan props?*
 Dalam js file, penggunaan state bisa disebut sebagai kondisi yang tercakupi dari suatu function, dimana dapat berbentuk konstanta sebagai variabelnya. Contohnya adalah state dari suatu function dapat dilihat dari nilai boolean dari konstanta showFavorite. Sehingga untuk if else condition dalam suatu tag, dapat menggunakan state dari objek tersebut. Sedang props jika dianalogikan seperti argumen atau constructor dari suatu js file.
+
 3. *Apa keuntungan menggunakan component (e.g. List, Item) di React? Berikan contohnya!*
 Keuntungan dari component merupakan pengimplemntasian microservice di React, sehingga component dapat memmfokuskan pembngunan lebih ke fitut yang memiliki depedensinya masing masing.
 4. *Menurut kamu, apa saja kelebihan menggunakan React dalam pengembangan web?*
