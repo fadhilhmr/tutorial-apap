@@ -1,8 +1,9 @@
 import React from "react";
 import classes from "./styles.module.css";
+import Button from "./../Button";
 
 const Hotel = (props) => {
-const { id, namaHotel, alamat, nomorTelepon, listKamar} = props;
+const { id, namaHotel, alamat, nomorTelepon, handleEdit, handleDelete,listKamar} = props;
 
 
 return (
@@ -13,11 +14,12 @@ return (
  <p>{`Nomor telepon: ${nomorTelepon}`}</p>
  <div>
  {listKamar.map((kamar) => (
-                <Kamar
-                nama={kamar.namaKamar}
-                jumlah={kamar.jumlah}
-                />
+     <div>
+                <h6>{kamar.namaKamar}</h6>
+                <h6>{kamar.jumlah}</h6>
+     </div>
                 ))}
+
  </div>
  
  <Button onClick={handleEdit} variant="success">

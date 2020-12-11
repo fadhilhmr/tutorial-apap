@@ -27,6 +27,7 @@ constructor(props) {
     this.handleEditHotel = this.handleEditHotel.bind(this);
     this.handleSubmitEditHotel = this.handleSubmitEditHotel.bind(this);
     this.handleDeleteHotel = this.handleDeleteHotel.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
     // this.handleClickLoading = this.handleClickLoading.bind(this);
 }
 
@@ -115,13 +116,13 @@ handleFilter(event) {
     let hotels = this.state.hotels;
     let tempHotel = this.state.tempHotel;
     let addedHotel = [];
-    let filterKey = this.state.filterKey;
+    let filterKey = event.target.value;
     for(let i = 0;i<hotels.length;i++){
-        if (tempHotel[i].namaHotel.includes(filterKey)){
-            addedHotel.push(tempHotel[i]);
+        if (hotels[i].namaHotel.includes(filterKey)){
+            addedHotel.push(hotels[i]);
         }
     }
-    this.setState({tempHotel:addedhotel})
+    this.setState({tempHotel:addedHotel})
 }
     
 
@@ -149,8 +150,8 @@ render() {
                     type="text"
                     placeholder="Search a Hotel"
                     name="filterKey"
-                    value={this.state.filterKey}
-                    onChange={this.handleFilter}x
+                    // value={this.state.filterKey}
+                    onChange={this.handleFilter}
                 />
             <div>
                 {this.state.tempHotel.map((hotel) => (
