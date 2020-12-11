@@ -2,6 +2,28 @@
 ## Authors
 * **FADHIL ILHAM RAHMADI** - *1806191194* - *A*
 
+
+### What I have learned today TUTORIAL 8
+### Pertanyaan
+1. *Ceritakan langkah - langkah yang kalian lakukan untuk solve LATIHAN no.1, dan mengapa kalian
+melakukan langkah - langkah tersebut?*
+jadi pertama, untuk mengsongkan fieldnya, saya mentrackdown value dari form tersebut. valunya berupa attribute state yang sudah memiliki nilai, berarti yang harus saya lakukan adalah meng-set state tersebut menjadi kosong lagi. dan ketika saya melihat flow algoritmanya, saya dapat setState di handler cancel,, karena handler cancel akan selalu dipanggil di penggunaan modal. Jadi di handlerCancel, saya menambahkan set state tiga attribut tersebut menjadi string kosong.
+2. *Jelaskan fungsi dari async dan await!*
+async= fungsi yang selalu mereturn promise, dan membuat objek non promise di dalam handlernya.
+Await =  berguna untuk mengambil data yang di fetch dari async objek dan menunggu eksekusinya selesai. penggunaannya bisa diganti dengan event handler, tetapi penggunaan await akan lebih simpel dan elegan dengan ksederhanaan yang efektif.
+
+3. *Masukkan jawaban dari Screenshot yang diperintahkan di halaman 7 pada Component Lifecycle pada pertanyaan ini.*
+https://docs.google.com/document/d/1XPPlPiSwApzlsMiEJq02D1ylBEN9_Gpc87XZbES_Dw8/edit?usp=sharing
+
+4. *Jelaskan fungsi dari componentDidMount, shouldComponentUpdate, componentDidUpdate, componentWillReceiveProps, componentWillUnmount.*
+componentDidMount = komponen yang dibuat dan dimasukkan ke DOM dengan fungsi dipanggil setelah mounting selesai
+shouldComponentUpdate = komponen yang dipanggil sesudah props/state dari suatu komponen berubah yang berfungsi untuk menentukan diperlukan render ulang atau tidak
+componentDidUpdate = komponen yang dipanggil sebelum dan sesudah props/state dari suatu komponen berubah dan render ulang sudah selesai
+componentWillReceiveProps = komponen yang dipanggil ketika mendapatkan value dari perubahan props yang telah terjadi
+componentWillUnmount = komponen yang dipanggil ketika suatu komponen di hilangkan dari DOM dan memebersikan "sisa" dari komponen.
+sumber: rangle.github.io/react-training
+
+
 ### What I have learned today TUTORIAL 7
 ### Pertanyaan
 
